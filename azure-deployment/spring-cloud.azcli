@@ -1,0 +1,11 @@
+RESOURCE_GROUP_NAME=spring-cloud-workshop
+SPRING_CLOUD_NAME=azure-spring-cloud-workshop
+LOCATION=eastus
+SKU=standard
+
+#create resource group
+
+az group create --name "$RESOURCE_GROUP_NAME" -l  $LOCATION
+
+
+az spring-cloud create -g spring-cloud-workshop --name $SPRING_CLOUD_NAME --sku $SKU --enable-java-agent
